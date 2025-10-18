@@ -11,4 +11,4 @@ const estudianteSchema = new mongoose.Schema(
   { timestamps: true } //Agrega createdAt y updatedAT automaticamente
 );
 
-module.exports = mongoose.model("Estudiantes", estudianteSchema);
+module.exports = mongoose.model("estudiantes", estudianteSchema);
