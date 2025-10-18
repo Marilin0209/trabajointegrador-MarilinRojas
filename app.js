@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 // Rutas de estudiantes
-app.use("/api-estudiantes", estudiantesRoutes);
+app.use("/api/estudiantes", estudiantesRoutes);
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
