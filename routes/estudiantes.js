@@ -1,7 +1,7 @@
 // /routes/estudiantes.js
 const express = require("express");
 const router = express.Router();
-const Estudiante = require("../models/Estudiantes"); // Asegurate de que exista
+const Estudiante = require("../models/estudiantes"); // Asegurate de que exista
 
 // GET - Obtener todos los estudiantes (con filtro opcional)
 router.get("/", async (req, res) => {
