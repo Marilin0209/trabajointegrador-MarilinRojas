@@ -5,9 +5,16 @@ const estudianteSchema = new mongoose.Schema(
   {
     nombre: { type: String, required: true },
     apellido: { type: String, required: true },
-    mail: { type: String, required: true },
-    cursos: { type: Array, required: true },
+    mail: { type: String, required: true, unique: true },
+    cursos: [
+      {
+        type: String,
+        required: true,
+        enum: ["Matemática", "Historia", "Ciencias", "Arte"],
+      },
+    ],
   },
+
   { timestamps: true } //Agrega createdAt y updatedAT automaticamente
 );
 

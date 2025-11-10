@@ -6,10 +6,18 @@ const Estudiante = require("../models/estudiantes"); // Asegurate de que exista
 // GET - Obtener todos los estudiantes (con filtro opcional)
 router.get("/", async (req, res) => {
   try {
-    const { categoria } = req.query;
-    const estudiantes = categoria
-      ? await Estudiante.find({ categoria })
-      : await Estudiante.find();
+    const { curso } = req.query;
+
+    //Uso in si se encuentra el paràmetro 'Curso'
+    const filtro = curso ? { cursos: { $in: [curso] } } : {};
+    const estudiantes = await Estudiante.find(filtro);
+
+    /*const estudiantes = cursos
+
+      ? await Estudiante.find({ cursos })
+      : await Estudiante.find(); 
+      */
+
     res.json(estudiantes);
   } catch (error) {
     console.error(error);
