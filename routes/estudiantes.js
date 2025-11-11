@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     const filtro = curso ? { cursos: { $in: [curso] } } : {};
     const estudiantes = await Estudiante.find(filtro);
 
-    /*const estudiantes = cursos
+    /*vAqui ---const estudiantes = cursos
 
       ? await Estudiante.find({ cursos })
       : await Estudiante.find(); 
