@@ -30,27 +30,25 @@ const dotenv = require("dotenv");
 const cors = require("cors"); // <--- Agregar esto
 const connectDB = require("./config/db");
 const estudiantesRoutes = require("./routes/estudiantes");
-
+const corsOptions = require("./config/corsOptions"); // 2. Importar las opciones de CORS
+const app = express();
 dotenv.config();
 connectDB();
 
-const app = express();
+//Configuración de cors
+app.use(cors(corsOptions)); // 3. Usar el middleware de CORS con las opciones definidas
 app.use(express.json());
-
-// 🔓 Habilitar CORS
-app.use(
-  cors({
-    origin: "*", // o mejor: "https://trabajointegrador-marilin-rojas-rn2vw94z3.vercel.app//" cuando ya tengas el dominio final
-  })
-);
-
+//ruta base
 app.get("/", (req, res) => {
   res.send("API de Estudiantes funcionando correctamente ✅");
 });
 
 app.use("/api/estudiantes", estudiantesRoutes);
 
+//Iniciamos el servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
+
+  console.log(`CORS configurado para http://localhost:5173`); // Confirmación de configuración de CORS
 });
