@@ -57,7 +57,7 @@ const express = require("express");
 const cors = require("cors"); // 1. Importar el paquete cors
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
-const productosRoutes = require("./routes/estudiantes");
+const estudiantesRoutes = require("./routes/estudiantes");
 const corsOptions = require("./config/corsOptions"); // 2. Importar las opciones de CORS
 const app = express();
 
