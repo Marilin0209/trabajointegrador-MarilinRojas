@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ```
 node_modules
@@ -6,3 +7,6 @@ node_modules
 npm-debug.log*
 dist/
 build/
+=======
+node_modules/
+>>>>>>> fc0868f (Subiendo Trabajo Integrador)

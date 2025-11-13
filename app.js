@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*/ app.js
+=======
+// app.js
+>>>>>>> fc0868f (Subiendo Trabajo Integrador)
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
@@ -10,6 +14,7 @@ connectDB(); // Conectar a la base de datos
 const app = express(); // Crear la aplicación de Express
 app.use(express.json()); // Middleware para leer JSON
 
+<<<<<<< HEAD
 // Ruta base
 app.get("/", (req, res) => {
   res.send("API de Estudiantes funcionando correctamente ✅");
@@ -17,12 +22,20 @@ app.get("/", (req, res) => {
 
 // Rutas de estudiantes
 app.use("/api/estudiantes", estudiantesRoutes);
+=======
+// Rutas
+app.get("/", (req, res) => {
+  res.send("API de Estudiantes");
+});
+app.use("/api/estudiantes", estudiantesRoutes); // http://localhost:3000/api/estudiantes
+>>>>>>> fc0868f (Subiendo Trabajo Integrador)
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+<<<<<<< HEAD
 */
 // app.js
 const express = require("express");
@@ -52,3 +65,5 @@ app.listen(PORT, () => {
 
   console.log(`CORS configurado para http://localhost:5173`); // Confirmación de configuración de CORS
 });
+=======
+>>>>>>> fc0868f (Subiendo Trabajo Integrador)
